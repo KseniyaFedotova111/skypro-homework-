@@ -7,8 +7,7 @@ def get_mask_card_number(card_number: str) -> str:
     return masked_card_number
 
 
-card_number_for_mask = "7000792289606361"
-print(get_mask_card_number(card_number_for_mask))
+
 
 
 def get_mask_account(account_number: str) -> str:
@@ -19,5 +18,4 @@ def get_mask_account(account_number: str) -> str:
     return masked_account_number
 
 
-account_number_for_mask = "73654108430135874305"
-print(get_mask_account(account_number_for_mask))
+
