@@ -1,18 +1,18 @@
 from datetime import datetime
 
 
-def filter_by_state(data, state="EXECUTED"):
+def filter_by_state(items, state="EXECUTED"):
     """
     Фильтрует список словарей по значению ключа 'state'.
     """
-    return [item for item in data if item.get("state") == state]
+    return [item for item in items if item.get("state") == state]
 
 
-def sort_by_date(data, descending=True):
+def sort_by_date(items, descending=True):
     """
     Сортирует список словарей по значению ключа 'date'.
     """
-    return sorted(data, key=lambda x: datetime.fromisoformat(x["date"]), reverse=descending)
+    return sorted(items, key=lambda x: datetime.fromisoformat(x["date"]), reverse=descending)
 
 
 data = [
