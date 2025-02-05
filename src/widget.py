@@ -28,8 +28,8 @@ def get_date(date_string: str) -> str:
     Принимает строку с датой в формате "YYYY-MM-DDTHH:MM:SS.ssssss"
     и возвращает строку с датой в формате "ДД.ММ.ГГГГ".
     """
-    date_part = date_string.split('T')[0]
-    day, month, year = date_part.split('-')
+    date_part = date_string.split("T")[0]
+    day, month, year = date_part.split("-")
     return f"{day}.{month}.{year}"
 
 
