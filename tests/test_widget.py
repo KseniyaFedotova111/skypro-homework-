@@ -1,16 +1,34 @@
-from src.widget import mask_account_card, get_date
+import pytest
+
+from src.widget import get_date, mask_account_card
 
 
-def test_mask_account_card_with_card_number(card_number_input):
-    expected = "Visa Platinum 7000 79** **** 6361"
-    assert mask_account_card(card_number_input) == expected
+@pytest.mark.parametrize(
+    "input_string, expected",
+    [
+        ("Visa Platinum 7000792289606361", "Visa Platinum 7000 79** **** 6361"),
+        ("Счет 73654108430135874305", "Счет **4305"),
+        ("MasterCard 1234567812345678", "MasterCard 1234 56** **** 5678"),
+        ("Счет 12345678901234567890", "Счет **7890"),
+    ],
+)
+def test_mask_account_card(input_string: str, expected: str) -> None:
+    """
+    Проверяет, что функция mask_account_card корректно маскирует номер карты или счета.
+    """
+    assert mask_account_card(input_string) == expected
 
 
-def test_mask_account_card_with_account_number(account_number_input):
-    expected = "Счет **4305"
-    assert mask_account_card(account_number_input) == expected
-
-
-def test_get_date(date_string_input):
-    expected = "2024.03.11"
-    assert get_date(date_string_input) == expected
+@pytest.mark.parametrize(
+    "date_string, expected",
+    [
+        ("2024-03-11T02:26:18.671407", "2024.03.11"),
+        ("2023-12-31T23:59:59.999999", "2023.12.31"),
+        ("2020-02-29T00:00:00.000000", "2020.02.29"),
+    ],
+)
+def test_get_date(date_string: str, expected: str) -> None:
+    """
+    Проверяет, что функция get_date корректно форматирует дату.
+    """
+    assert get_date(date_string) == expected
