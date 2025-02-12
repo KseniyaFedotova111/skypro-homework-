@@ -2,16 +2,10 @@ from datetime import datetime
 
 
 def filter_by_state(items: list[dict], state: str = "EXECUTED") -> list[dict]:
-    """
-    Фильтрует список словарей по значению ключа 'state'.
-    """
     return [item for item in items if item.get("state") == state]
 
 
 def sort_by_date(items: list[dict], descending: bool = True) -> list[dict]:
-    """
-    Сортирует список словарей по значению ключа 'date'.
-    """
     return list(sorted(items, key=lambda x: datetime.fromisoformat(x["date"]), reverse=descending))
 
 
