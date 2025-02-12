@@ -22,9 +22,9 @@ def test_mask_account_card(input_string: str, expected: str) -> None:
 @pytest.mark.parametrize(
     "date_string, expected",
     [
-        ("2024-03-11T02:26:18.671407", "2024.03.11"),
-        ("2023-12-31T23:59:59.999999", "2023.12.31"),
-        ("2020-02-29T00:00:00.000000", "2020.02.29"),
+        ("2024-03-11T02:26:18.671407", "11.03.2024"),
+        ("2023-12-31T23:59:59.999999", "31.12.2023"),
+        ("2020-02-29T00:00:00.000000", "29.02.2020"),
     ],
 )
 def test_get_date(date_string: str, expected: str) -> None:
