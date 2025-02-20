@@ -18,7 +18,7 @@ from src.processing import filter_by_state, sort_by_date
 )
 def test_filter_by_state(sample_data: list[dict[str, str | int]], state: str, expected: list[dict]) -> None:
     """
-    Проверяет фильтрацию данных по состоянию.
+    Проверяет фильтрацию данных по состоянию
     """
     assert filter_by_state(sample_data, state) == expected
 
@@ -42,6 +42,6 @@ def test_filter_by_state(sample_data: list[dict[str, str | int]], state: str, ex
 )
 def test_sort_by_date(sample_data: list[dict[str, str | int]], descending: bool, expected: list[dict]) -> None:
     """
-    Проверяет сортировку данных по дате.
+    Проверяет сортировку данных по дате
     """
     assert sort_by_date(sample_data, descending) == expected

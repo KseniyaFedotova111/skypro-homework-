@@ -14,7 +14,7 @@ from src.widget import get_date, mask_account_card
 )
 def test_mask_account_card(input_string: str, expected: str) -> None:
     """
-    Проверяет, что функция mask_account_card корректно маскирует номер карты или счета.
+    Проверяет, что функция mask_account_card корректно маскирует номер карты или счета
     """
     assert mask_account_card(input_string) == expected
 
@@ -29,6 +29,6 @@ def test_mask_account_card(input_string: str, expected: str) -> None:
 )
 def test_get_date(date_string: str, expected: str) -> None:
     """
-    Проверяет, что функция get_date корректно форматирует дату.
+    Проверяет, что функция get_date корректно форматирует дату
     """
     assert get_date(date_string) == expected
