@@ -104,3 +104,7 @@ def transactions():
             "to": "Счет 43597928997568165086"
         }
     ]
+
+@pytest.fixture
+def tmp_path(tmp_path_factory):
+    return tmp_path_factory.mktemp("logs")
