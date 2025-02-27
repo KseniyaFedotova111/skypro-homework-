@@ -25,13 +25,12 @@ print(mask_account_card(masked_account_number))
 
 def get_date(date_string: str) -> str:
     """
-    Принимает строку с датой в формате "YYYY-MM-DDTHH:MM:SS.ssssss"
-    и возвращает строку с датой в формате "ДД.ММ.ГГГГ".
+    Принимает строку с датой в формате "YYYY-MM-DDTHH:MM:SS.ssssss" и возвращает строку с датой в формате "ДД.ММ.ГГГГ"
     """
     date_part = date_string.split("T")[0]
-    day, month, year = date_part.split("-")
+    year, month, day = date_part.split("-")
     return f"{day}.{month}.{year}"
 
 
 date_time_string = "2024-03-11T02:26:18.671407"
-print(get_date(date_time_string))
+print(get_date(date_time_string))  # Ожидаемый вывод: "11.03.2024"
