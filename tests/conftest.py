@@ -1,6 +1,5 @@
 import pytest
 
-
 @pytest.fixture
 def sample_data() -> list[dict[str, str | int]]:
     """
@@ -104,6 +103,7 @@ def transactions():
             "to": "Счет 43597928997568165086"
         }
     ]
+
 
 @pytest.fixture
 def tmp_path(tmp_path_factory):
