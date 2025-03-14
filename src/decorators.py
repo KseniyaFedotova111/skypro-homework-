@@ -52,4 +52,3 @@ def my_error_function(x: int, y: int) -> float:
     Пример функции, которая делит два числа.
     """
     return x / y
-
