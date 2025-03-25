@@ -7,7 +7,6 @@ logger = logging.getLogger(__name__)
 log_dir = Path(__file__).parent.parent / "logs"
 log_dir.mkdir(exist_ok=True)
 
-# Настраиваем файловый обработчик
 log_file = log_dir / "utils.log"
 file_handler = logging.FileHandler(log_file)
 file_formatter = logging.Formatter('%(asctime)s %(name)s %(levelname)s: %(message)s')
