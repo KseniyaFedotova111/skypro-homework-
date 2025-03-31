@@ -109,3 +109,17 @@ def transactions():
 @pytest.fixture
 def tmp_path(tmp_path_factory):
     return tmp_path_factory.mktemp("logs")
+
+
+@pytest.fixture
+def sample_operations():
+    """
+    Фикстура с примером операций для тестирования
+    """
+    return [
+        {"id": 1, "description": "Перевод на счет друга"},
+        {"id": 2, "description": "Оплата интернета"},
+        {"id": 3, "description": "Покупка товаров в магазине"},
+        {"id": 4, "description": "Оплата коммунальных услуг"},
+        {"id": 5, "description": "Перевод зарплаты"}
+    ]
